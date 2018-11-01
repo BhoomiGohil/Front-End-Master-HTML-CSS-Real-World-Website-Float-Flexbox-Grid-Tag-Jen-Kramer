@@ -23,6 +23,8 @@ h1, h2, h3, h4, h5, h6{
   font-weight: normal;
 }
 
+/* Common */
+
 .wrapper{
   width: 97%;
   max-width: 1200px;
@@ -56,11 +58,6 @@ nav a{
   color: #c82060;
 }
 
-.bgimghome{
-  height: 183px;
-  background: url("Images/header-1200.jpg") no-repeat;
-}
-
 .content{
   background-color: #fff6e0;
   border-bottom-left-radius: 10px;
@@ -80,6 +77,47 @@ nav a{
   font-size: 3em;
   border-bottom: 2px dotted #c82060;
   margin-top: 0px;
+}
+
+.content article h4{
+  font-family: Cabin;
+  color:black;
+  font-weight: bold;
+}
+
+.content article h3{
+  font-size: 2em;
+  margin-top: 0px;
+}
+
+.content section aside h3{
+  border-top-left-radius: 10px;
+  border-top-right-radius:10px;
+  font-size: 2em;
+  color:white;
+  padding: 0 0.5em;
+  margin-bottom: 0px;
+}
+
+blockquote{
+  margin:0px;
+}
+
+blockquote p{
+  margin:1em;
+}
+
+blockquote cite{
+  text-transform: uppercase;
+  font-style: normal;
+  padding: 0 1em 1em 1em;
+  display: block;
+}
+
+article img{
+  width:100%;
+  max-width:250px;
+  border-radius: 10px;
 }
 
 footer {
@@ -109,37 +147,15 @@ footer a {
 
 /* Home */
 
+.bgimghome{
+  height: 183px;
+  background: url("Images/header-1200.jpg") no-repeat;
+}
+
 .colhome{
   display:grid;
   grid-gap:1em;
   grid-template-columns: repeat(4 , 1fr);
-}
-
-.colhome h3{
-  font-size:2em;
-  margin-top: 0px;
-}
-
-.colhome blockquote{
-  margin:0px;
-}
-
-.colhome blockquote p{
-  margin: 1em;
-}
-
-.colhome blockquote cite {
-  text-transform: uppercase;
-  font-style: normal;
-  padding-bottom: 1em;
-  display: block;
-  padding: 0 1em 1em 1em;
-}
-
-.colhome img{
-  width:100%;
-  max-width:250px;
-  border-radius: 10px;
 }
 
 .colhome article p a{
@@ -168,11 +184,10 @@ footer a {
 }
 
 .colgallery img{
-  width:100%;
-  border-radius: 10px;
+  max-width:100%;
 }
 
-/* Menu */
+/* Contact */
 
 .formone{
   margin-bottom: 1em;
@@ -180,23 +195,6 @@ footer a {
 
 .formtwo{
   margin-top: 2em;
-}
-
-.colcommon-1 h3{
-  margin-top: 0px;
-  font-size: 2em;
-}
-
-.colcommon-1 img{
-  width:100%;
-  max-width:250px;
-  border-radius: 10px;
-}
-
-.colcommon-1 h4{
-  font-family: Cabin;
-  color:black;
-  font-weight: bold;
 }
 
 .colcommon-1 fieldset{
@@ -266,14 +264,7 @@ textarea{
   padding: 0.2em 0.5em;
 }
 
-.colcommon-2 h3{
-  border-top-left-radius: 10px;
-  border-top-right-radius:10px;
-  font-size: 2em;
-  color:white;
-  padding: 0 0.5em;
-  margin-bottom: 0px;
-}
+/* Other Pages */
 
 .colcommon-2 aside{
   margin: 3em 0;
@@ -301,23 +292,86 @@ textarea{
 }
 
 .colcommon-2 .two img{
-  width:100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius:10px;
   display:block;
 }
 
-.colcommon-2 blockquote{
-  margin:0px;
+@media(max-width:849px)
+{
+  .wrapper
+  {
+    max-width: 767px;
+  }
+
+  .bgimghome {
+    height: 130px;
+    background: url(Images/header-850.jpg) no-repeat;
+  }
+
+  .content article h2 {
+    font-size: 1.5em;
+    border-bottom: none;
+  }
+
+  .colhome {
+    grid-template-columns: repeat(2 , 1fr);
+  }
+
+  .content{
+    grid-template-columns: 1fr;
+    grid-gap: 1em;
+  }
+
+  .content article h3 {
+    font-size: 18.72px;
+  }
+
+  .colcommon-2{
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(2 , 1fr);
+  }
+
+  .content section aside h3 {
+    font-size: 18.72px;
+  }
 }
 
-.colcommon-2 blockquote p{
-  margin:1em;
-}
+@media(max-width:549px)
+{
+  .wrapper {
+    width: 100%;
+  }
 
-.colcommon-2 blockquote cite{
-  text-transform: uppercase;
-  font-style: normal;
-  padding: 0 1em 1em 1em;
-  display: block;
+  .bgimghome {
+    height: 0px;
+    background:none;
+  }
+
+  nav ul{
+    overflow: auto;
+  }
+
+  nav li {
+    display: block;
+    padding: 0.5em;
+    width: 50%;
+    padding-left: 1em;
+  }
+
+  nav li:nth-child(odd)
+  {
+    float:left;
+  }
+
+  nav li:nth-child(even)
+  {
+    float:right;
+  }
+
+  .content , .colhome , .colcommon-2 {
+    display:block;
+  }
+
 }
